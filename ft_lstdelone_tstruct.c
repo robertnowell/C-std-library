@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_tstruct.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnowell <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 15:16:42 by rnowell           #+#    #+#             */
-/*   Updated: 2016/09/24 15:16:46 by rnowell          ###   ########.fr       */
+/*   Created: 2016/11/13 10:49:25 by rnowell           #+#    #+#             */
+/*   Updated: 2016/11/13 10:49:27 by rnowell          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_lstdelone_tstruct(t_struct **alst)
 {
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	ft_strdel(&((*alst)->s));
+	(*alst)->fdesc = 0;
+	(*alst)->index = NULL;
+	free(*alst);
+	*alst = NULL;
 }

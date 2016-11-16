@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lst_push_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnowell <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 15:16:42 by rnowell           #+#    #+#             */
-/*   Updated: 2016/09/24 15:16:46 by rnowell          ###   ########.fr       */
+/*   Created: 2016/11/13 11:24:46 by rnowell           #+#    #+#             */
+/*   Updated: 2016/11/13 11:24:47 by rnowell          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_lst_push_back(t_struct **l, char *s, int fd, char *s2)
 {
-	while (*s)
+	t_struct *list;
+
+	list = *l;
+	if (!*l)
+		*l = ft_create_elem(s, fd, s2);
+	else
 	{
-		ft_putchar(*s);
-		s++;
+		while (list->next)
+			list = list->next;
+		list->next = ft_create_elem(s, fd, s2);
 	}
 }

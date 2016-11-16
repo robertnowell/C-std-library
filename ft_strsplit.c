@@ -65,10 +65,9 @@ char			**ft_strsplit(char const *str, char c)
 	int		stri;
 	int		wc;
 
-	if (!str || !c)
-		return (NULL);
 	wc = ft_wordcount(str, c);
-	if (!(res = (char **)malloc(sizeof(char *) * (wc + 1))))
+	res = (char **)malloc(sizeof(char *) * (wc + 1));
+	if (!res)
 		return (NULL);
 	stri = 0;
 	i = 0;
@@ -80,7 +79,8 @@ char			**ft_strsplit(char const *str, char c)
 		if (!word)
 			return (NULL);
 		word = ft_replace_word(stri, str, word, c);
-		res[i++] = word;
+		res[i] = word;
+		i++;
 	}
 	res[i] = 0;
 	return (res);

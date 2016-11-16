@@ -1,22 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup_until.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnowell <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 15:16:42 by rnowell           #+#    #+#             */
-/*   Updated: 2016/09/24 15:16:46 by rnowell          ###   ########.fr       */
+/*   Created: 2016/11/13 10:57:02 by rnowell           #+#    #+#             */
+/*   Updated: 2016/11/13 10:57:03 by rnowell          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+/*
+** this function dups a string up until a character, c,
+** is found in the source string.
+*/
+
+char	*ft_strdup_until(char *s, char c)
 {
-	while (*s)
+	char		*result;
+	int			i;
+
+	i = 0;
+	if (!(result = (char *)malloc(ft_strlen_until(s, '\n') + 1)))
 	{
-		ft_putchar(*s);
-		s++;
+		return (result);
 	}
+	if (!s)
+	{
+		result = ft_strnew(1);
+		ft_bzero(result, 1);
+	}
+	while (s[i] && s[i] != c)
+	{
+		result[i] = s[i];
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
 }

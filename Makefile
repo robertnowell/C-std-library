@@ -1,5 +1,5 @@
 NAME = libft.a
-SRC =  ft_lstnew.c ft_strncpy.c \
+SRC =  ft_lstnew.c ft_set_print_color_to.c ft_strncpy.c \
 ft_memalloc.c ft_strcat.c ft_strnequ.c \
 ft_atoi.c ft_memccpy.c ft_strchr.c ft_strnew.c \
 ft_bzero.c ft_memchr.c ft_strclr.c ft_strnstr.c \
@@ -15,11 +15,15 @@ ft_lstdel.c ft_putnbr.c ft_strmap.c	 \
 ft_lstdelone.c ft_putnbr_fd.c ft_strmapi.c \
 ft_lstiter.c ft_putstr.c ft_strncat.c \
 ft_lstmap.c ft_putstr_fd.c ft_strncmp.c ft_is_sort.c \
-ft_count_digits.c ft_strrev.c ft_wordcount.c ft_itoabase.c
+ft_count_digits.c ft_strrev.c ft_wordcount.c ft_itoabase.c ft_set_print_color_to.c \
+ft_lst_clone.c ft_lst_push_back.c ft_create_elem.c ft_lstdel_if.c \
+ft_strlen_until.c ft_strdup_until.c ft_putstr_digits.c ft_lstdel_tstruct.c \
+ft_lstdelone_tstruct.c 
+
 
 OBJ = $(SRC:.c=.o)
 
-HEADER = libft.h
+HEADER = /includes/libft.h
 
 all: $(NAME)
 
@@ -27,6 +31,7 @@ $(NAME):
 	gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEADER)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
+
 
 clean:
 	/bin/rm -f $(OBJ)

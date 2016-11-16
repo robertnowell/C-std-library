@@ -17,11 +17,9 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		i;
 	char	*new;
 
-	if (!s || !f)
-		return (NULL);
+	i = 0;
 	if (!(new = malloc(ft_strlen(s) + 1)))
 		return (NULL);
-	i = 0;
 	while (s[i])
 	{
 		new[i] = f(s[i]);

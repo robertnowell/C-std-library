@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_create_elem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnowell <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 15:16:42 by rnowell           #+#    #+#             */
-/*   Updated: 2016/09/24 15:16:46 by rnowell          ###   ########.fr       */
+/*   Created: 2016/11/13 10:27:40 by rnowell           #+#    #+#             */
+/*   Updated: 2016/11/13 10:27:44 by rnowell          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+t_struct	*ft_create_elem(char *content, int fd, char *endl_index)
 {
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	t_struct *list;
+
+	if (!(list = (t_struct *)malloc(sizeof(t_struct))))
+		return (0);
+	list->s = ft_strdup(content);
+	list->fdesc = fd;
+	list->index = endl_index;
+	list->next = NULL;
+	return (list);
 }

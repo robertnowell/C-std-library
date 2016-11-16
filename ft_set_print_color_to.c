@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_set_print_color_to.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnowell <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 15:16:42 by rnowell           #+#    #+#             */
-/*   Updated: 2016/09/24 15:16:46 by rnowell          ###   ########.fr       */
+/*   Created: 2016/11/13 11:44:12 by rnowell           #+#    #+#             */
+/*   Updated: 2016/11/13 11:44:13 by rnowell          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_set_print_color_to(int color)
 {
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	ft_putstr("\033[");
+	ft_putnbr(color);
+	ft_putchar('m');
 }

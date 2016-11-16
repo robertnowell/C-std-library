@@ -12,38 +12,62 @@
 
 #include "libft.h"
 
-int			ft_isspace(int c)
+static int			ft_nonwhitespace_len(char const *s)
 {
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	else
-		return (0);
+	int		len;
+
+	len = 0;
+	while (*s != '\0')
+	{
+		if (*s > ' ')
+			break ;
+		s++;
+	}
+	while (*s)
+	{
+		s++;
+		len++;
+	}
+	s--;
+	while (*s <= ' ')
+	{
+		len--;
+		s--;
+	}
+	return (len);
 }
 
-char		*ft_strtrim(char const *s)
+static int			ft_check_empty(const char *s)
 {
-	size_t	leading;
-	size_t	trailing;
-	size_t	i;
-	char	*ret;
-
-	if (!s)
-		return (NULL);
-	i = 0;
-	trailing = 0;
-	leading = 0;
-	while (ft_isspace(*(s + i++)))
-		leading++;
-	i = ft_strlen(s) - 1;
-	while (ft_isspace(*(s + i)))
+	while (*s != '\0')
 	{
-		trailing++;
-		i--;
+		if (*s++ > ' ')
+			return (0);
 	}
-	if ((ft_strlen(s) == leading))
-		return (ft_strnew(1));
-	ret = ft_strnew(ft_strlen(s) - trailing - leading);
-	if (!ret)
+	return (1);
+}
+
+char				*ft_strtrim(char const *s)
+{
+	int		len;
+	int		i;
+	char	*new;
+
+	i = 0;
+	if (ft_check_empty(s))
+		return ("");
+	len = ft_nonwhitespace_len(s);
+	if (!(new = malloc(len + 1)))
 		return (NULL);
-	return (ft_strncpy(ret, s + leading, ft_strlen(s) - trailing - leading));
+	while (*s <= ' ')
+		s++;
+	while (len)
+	{
+		new[i] = *s;
+		s++;
+		i++;
+		len--;
+	}
+	new[i] = '\0';
+	return (new);
 }

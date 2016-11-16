@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen_until.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnowell <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 15:16:42 by rnowell           #+#    #+#             */
-/*   Updated: 2016/09/24 15:16:46 by rnowell          ###   ########.fr       */
+/*   Created: 2016/11/13 10:39:27 by rnowell           #+#    #+#             */
+/*   Updated: 2016/11/13 10:39:30 by rnowell          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+int	ft_strlen_until(char *s, char c)
 {
-	while (*s)
+	size_t len;
+
+	if (!s)
+		return (0);
+	len = 0;
+	while (s[len])
 	{
-		ft_putchar(*s);
-		s++;
+		if (s[len] == c)
+			return (len);
+		len++;
 	}
+	return (len);
 }

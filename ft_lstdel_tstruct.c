@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel_tstruct.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnowell <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/24 15:16:42 by rnowell           #+#    #+#             */
-/*   Updated: 2016/09/24 15:16:46 by rnowell          ###   ########.fr       */
+/*   Created: 2016/11/13 10:52:07 by rnowell           #+#    #+#             */
+/*   Updated: 2016/11/13 10:52:10 by rnowell          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_lstdel_tstruct(t_struct **alst)
 {
-	while (*s)
+	t_struct *next;
+
+	while (*alst)
 	{
-		ft_putchar(*s);
-		s++;
+		next = (*alst)->next;
+		ft_lstdelone_tstruct(alst);
+		*alst = next;
 	}
 }
