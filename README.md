@@ -10,7 +10,7 @@ To use this library, follow these steps:
  1. Clone or download the repository.  
  2. In Mac OS, navigate to the local repository from the command line.  
  3. Type the command "make re" into the command line and press return.  
- 4. This creates the libft.a library files which can be used to access the constituent functions.  
+ 4. This creates the libft.a library file which can be used to access the constituent functions.  
 
 
 2. Using the library in a C program  
