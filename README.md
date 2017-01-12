@@ -139,8 +139,6 @@ ft_lstdel_if
 ft_lstdel_tstruct  
 ft_lstdelone_tstruct  
 
-#endif
-
 ## Authors
 
 * **Robert Nowell** (https://github.com/robertnowell)
