@@ -26,7 +26,32 @@ To use this library, follow these steps:
 ```
 %gcc -o myprogram file.c -L./ -lft  
 ```
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 ## Functions
 
 **print to file**
