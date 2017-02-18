@@ -18,20 +18,12 @@ ft_lstmap.c ft_putstr_fd.c ft_strncmp.c ft_is_sort.c \
 ft_count_digits.c ft_strrev.c ft_wordcount.c ft_itoabase.c ft_set_print_color_to.c \
 ft_lst_clone.c ft_lst_push_back.c ft_create_elem.c ft_lstdel_if.c \
 ft_strlen_until.c ft_strdup_until.c ft_putstr_digits.c ft_lstdel_tstruct.c \
-<<<<<<< HEAD
 ft_lstdelone_tstruct.c get_next_line.c
-=======
-ft_lstdelone_tstruct.c 
->>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb
 
 
 OBJ = $(SRC:.c=.o)
 
-<<<<<<< HEAD
 HEADER = includes/libft.h
-=======
-HEADER = /includes/libft.h
->>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb
 
 all: $(NAME)
 
@@ -47,8 +39,4 @@ clean:
 fclean: clean
 	/bin/rm -f $(NAME)
 
-<<<<<<< HEAD
 re: fclean all clean
-=======
-re: fclean all clean
->>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb

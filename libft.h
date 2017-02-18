@@ -17,11 +17,8 @@
 # include <string.h>
 # include <stdlib.h>
 
-<<<<<<< HEAD
 # define BUFF_SIZE 200
 
-=======
->>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb
 typedef struct		s_list
 {
 	void			*content;
@@ -37,12 +34,8 @@ typedef struct		s_struct
 	struct s_struct *next;
 }					t_struct;
 
-<<<<<<< HEAD
-
 int get_next_line(const int fd, char **line);
 
-=======
->>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb
 /*
 ** print to file
 */
@@ -122,10 +115,7 @@ char				*ft_strrev(char *s);
 /*
 ** int
 */
-<<<<<<< HEAD
 
-=======
->>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb
 int					ft_atoi(char const *str);
 int					ft_atoi_base(char const *str, int base);
 char				*ft_itoa(int n);
