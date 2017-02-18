@@ -16,8 +16,11 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+<<<<<<< HEAD
 # include "get_next_line.h"
 # define BUFF_SIZE 200
+=======
+>>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb
 
 typedef struct		s_list
 {
@@ -35,12 +38,15 @@ typedef struct		s_struct
 }					t_struct;
 
 /*
+<<<<<<< HEAD
 ** get next line
 */
 
 int get_next_line(const int fd, char **line);
 
 /*
+=======
+>>>>>>> 0f8e024ac2e197c134a2a5abc74cb5a32a5938cb
 ** print to file
 */
 void				ft_putchar_fd(char c, int fd);
