@@ -7,15 +7,15 @@ This project recreates functions from the C standard library. It is implemented 
 To use this library, follow these steps:  
 
 1. Create the library  
- 1. Clone or download the repository.  
- 2. In Mac OS, navigate to the local repository from the command line.  
- 3. Type the command "make re" into the command line and press return.  
- 4. This creates the libft.a library file which can be used to access the constituent functions.  
+ * Clone or download the repository.  
+ * In Mac OS, navigate to the local repository from the command line.  
+ * Type the command "make re" into the command line and press return.  
+ * This creates the libft.a library file which can be used to access the constituent functions.  
 
 
 2. Using the library in a C program  
- 1. One way to use this library is to copy the created libft.a file as well as the libft.h file into the directory which contains your C file which references the libft.a functions.  
- 2. In your C file, place the following line at the top:  
+ * One way to use this library is to copy the created libft.a file as well as the libft.h file into the directory which contains your C file which references the libft.a functions.  
+ * In your C file, place the following line at the top:  
 
 3. To compile the file, link your program's .c file with the library object file in a command similar to the following:  
 
